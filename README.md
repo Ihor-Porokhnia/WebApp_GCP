@@ -1,3 +1,3 @@
-Java Web Simple Project
+Java WebProject 4 EPAM DevOps
 
-Technologies stack: Java 1.8, Servlets, SQLite, JDBC, Javascript, CSS, HTML
+Technologies stack: Java 1.8, Servlets, MySQL, JDBC, Javascript, CSS, HTML
