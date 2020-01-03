@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="unnamed">
+    <output-path>$PROJECT_DIR$/web</output-path>
+    <root id="archive" name="unnamed.war">
+      <element id="javaee-facet-resources" facet="untitled2/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.json:json:20141113" />
+          <element id="library" level="project" name="Maven: javaee:javaee-api:5" />
+          <element id="library" level="project" name="Maven: org.xerial:sqlite-jdbc:3.8.11.2" />
+        </element>
+        <element id="directory" name="classes">
+          <element id="module-output" name="untitled2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
