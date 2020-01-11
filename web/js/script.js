@@ -5,17 +5,17 @@ var serverProtocolName = window.location.protocol;
 
 var portName = window.location.port;
 
-if (portName.length == 0) {
-    portName = "80";
+if (portName.length != 0) {
+    portName = ":" + portName;
 }
 
 if (serverHostName === "localhost")
 {
-    serverPath = serverProtocolName + "//" + serverHostName + ":" + portName;
+    serverPath = serverProtocolName + "//" + serverHostName + portName;
 }
 else
 {	
-	serverPath = serverProtocolName + "//" + serverHostName + ":8080/Backend-1.0-SNAPSHOT/";
+	serverPath = serverProtocolName + "//" + serverHostName + portName +"/Backend-1.0-SNAPSHOT/";
    // serverPath = serverProtocolName + "//" + serverHostName;
 }
 
