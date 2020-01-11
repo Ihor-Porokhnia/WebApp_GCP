@@ -1,3 +1,3 @@
-Java WebProject 4 EPAM DevOps
+WebProject  EPAM DevOps training winter 2019/2020
 
-Technologies stack: Java 1.8, Servlets, MySQL, JDBC, Javascript, CSS, HTML
+Technologies stack: Java 1.8, Servlets, MariaDB, JDBC, Javascript, CSS, HTML
