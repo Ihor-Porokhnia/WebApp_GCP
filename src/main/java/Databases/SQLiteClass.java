@@ -12,8 +12,8 @@ public class SQLiteClass {
 
     public static void Conn() throws ClassNotFoundException, SQLException, NamingException {
         //Class.forName("com.mysql.jdbc.Driver");
-        String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://inst1.bugoga.ga:3306/SimpleDatabase";
+        String driver = "org.mariadb.jdbc.Driver";
+        String url = "jdbc:mariadb://localhost:3306/SimpleDatabase";
         String username = "remmie";
         String password = "nemA_666";
         Class.forName(driver);
