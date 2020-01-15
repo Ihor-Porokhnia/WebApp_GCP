@@ -15,7 +15,7 @@ if (serverHostName === "localhost")
 }
 else
 {	
-	serverPath = serverProtocolName + "//" + serverHostName + portName +"/Backend-1.0-SNAPSHOT/";
+	serverPath = serverProtocolName + "//" + serverHostName + portName +"/Backend";
    // serverPath = serverProtocolName + "//" + serverHostName;
 }
 
