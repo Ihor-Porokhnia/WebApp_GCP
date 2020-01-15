@@ -1,5 +1,4 @@
 Ihor Porokhnia's project
- 
 
 EPAM DevOps  training winter 2019 /2020
 
