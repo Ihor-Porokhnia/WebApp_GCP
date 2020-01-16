@@ -1,7 +1,7 @@
 #!/bin/bash
 
 uuidgen  >> README.md
-git add .
-git commit -m  'tst'
-git push origin HEAD:backend
+git add . > /dev/null
+git commit -m  'tst'  > /dev/null
+git push origin HEAD:backend > /dev/null
 
