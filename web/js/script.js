@@ -44,6 +44,9 @@ function serverConnectFunc(serverUrl, jsonData) {
                     });
 
                     break;
+		case "red":
+			alert("red")
+			break;
             }
         },
         error: function (xhr, status, error) {
@@ -68,3 +71,11 @@ function addName()
 
     serverConnectFunc(serverPath, JSON.stringify(jsonData));
 }
+function getRed()
+{
+    var jsonData = new Object();
+    jsonData.command = "13";
+
+    serverConnectFunc(serverPath, JSON.stringify(jsonData));
+}
+
