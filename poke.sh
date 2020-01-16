@@ -1,7 +1,7 @@
 #!/bin/bash
-str=uuidgen
-echo $str >> README.md
+
+uuidgen  >> README.md
 git add .
-git commit -m $str
+git commit -m  'tst'
 git push origin HEAD:backend
 
