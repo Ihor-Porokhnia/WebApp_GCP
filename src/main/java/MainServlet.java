@@ -8,7 +8,9 @@ import Databases.SQLiteClass;
 import org.json.JSONObject;
 
 public class MainServlet extends HttpServlet {
-
+	
+	//public String returnRed(){}
+	
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -18,7 +20,7 @@ public class MainServlet extends HttpServlet {
             dispatcher.forward(request, response);
         }
     }
-
+	
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         StringBuilder jb = new StringBuilder();
@@ -64,7 +66,17 @@ public class MainServlet extends HttpServlet {
                     out.println(jsonToReturn1.toString());
 
                     break;
-                
+
+               case 13: 
+
+                    JSONObject jsonToReturn13 = new JSONObject();
+                    jsonToReturn1.put("answer", "red");
+                    out.println(jsonToReturn13.toString());
+
+                    break; 
+
+
+
                 default:
                     System.out.println("default switch");
                     break;
