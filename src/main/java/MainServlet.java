@@ -70,7 +70,7 @@ public class MainServlet extends HttpServlet {
                case 13: 
 
                     JSONObject jsonToReturn13 = new JSONObject();
-                    jsonToReturn1.put("answer", "red");
+                    jsonToReturn13.put("answer", "red");
                     out.println(jsonToReturn13.toString());
 
                     break; 
