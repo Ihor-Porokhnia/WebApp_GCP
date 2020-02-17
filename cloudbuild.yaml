@@ -6,4 +6,4 @@ artifacts:
     objects:
       location: "gs://rusted_bucket/"
       paths:
-      - "/workspace/target"
+      - "/workspace/target/Backend-1.0-SNAPSHOT.war"
