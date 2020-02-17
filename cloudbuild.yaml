@@ -10,6 +10,9 @@ steps:
 
   - name: 'gcr.io/cloud-builders/kubectl'
     args: [ 'set', 'image', 'deployment/nginx-deployment', nginx=gcr.io/$PROJECT_ID/nginx:$TAG_NAME', '--record' ]
+    env:
+    - 'CLOUDSDK_COMPUTE_ZONE=europe-north1-c'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=k8s-epam'
 
   - name: 'gcr.io/cloud-builders/kubectl'
     args: [ 'set', 'image', 'deployment/tomcat-deployment', tomcat=gcr.io/$PROJECT_ID/tomas:$TAG_NAME', '--record' ]
