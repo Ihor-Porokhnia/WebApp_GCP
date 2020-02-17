@@ -4,6 +4,6 @@ steps:
     - package
 artifacts:
     objects:
-      location: "gs://${_BUCKET}/"
+      location: "gs://rusted_bucket/"
       paths:
       - "target/${_TARGET}"
