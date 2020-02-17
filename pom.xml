@@ -121,6 +121,7 @@
             </plugin>
 
         </plugins>
+        <finalName>Backend.war</finalName>
     </build>
 
 
