@@ -6,4 +6,4 @@ artifacts:
     objects:
       location: "gs://rusted_bucket/"
       paths:
-      - "target/${_TARGET}"
+      - "/workspace/target"
