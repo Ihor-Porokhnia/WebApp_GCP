@@ -3,7 +3,7 @@ steps:
     args:
     - package
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/tommie', '-f', 'Dockerfile2',  '.' ]  
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/tommie', '-t', '$TAG_NAME', '-f', 'Dockerfile2',  '.' ]  
 
 artifacts:
     objects:
