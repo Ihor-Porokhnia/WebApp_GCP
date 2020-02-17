@@ -4,5 +4,10 @@ steps:
     - package
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/tomas:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/tomas:latest', '-f', 'Dockerfile2',  '.' ]  
+    
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/nginx:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/nginx:latest',  '.' ]  
 images:
 - 'gcr.io/$PROJECT_ID/tomas'   
+- 'gcr.io/$PROJECT_ID/nginx'
+
