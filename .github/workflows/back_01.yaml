@@ -15,7 +15,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run a one-line script
       run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    
+    - name: GitHub Action for Maven
+      uses: LucaFeger/action-maven-cli@1.1.0
+      with:
+       args: clean install
