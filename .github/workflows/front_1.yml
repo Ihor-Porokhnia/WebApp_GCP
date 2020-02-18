@@ -1,6 +1,9 @@
 name: CI
 
-on: [push]
+on:
+ push:
+   branches: 
+     - cloudback
 
 jobs:
   build:
@@ -9,8 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: action-maven
+      uses: LucaFeger/action-maven-cli@1.1.0
+      with:
+        args: "clean install"  
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
