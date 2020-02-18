@@ -7,4 +7,3 @@ Technologies stack: Java 1.8, Servlets, MariaDB, JDBC, Javascript, CSS, HTML
 
 
 
-q
