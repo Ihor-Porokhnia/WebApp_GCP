@@ -1,0 +1,22 @@
+name: CI
+
+on:
+ push:
+   branches: 
+     - cloudback
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: action-maven
+      uses: LucaFeger/action-maven-cli@1.1.0
+      with:
+        args: clean install  
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
