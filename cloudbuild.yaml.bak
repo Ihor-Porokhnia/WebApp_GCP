@@ -20,6 +20,30 @@ steps:
     - 'CLOUDSDK_COMPUTE_ZONE=europe-north1-c'
     - 'CLOUDSDK_CONTAINER_CLUSTER=k8s-epam'
  
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: [ 'scale', 'deployment', 'nginx-deployment', '--replicas=0' ]
+    env:
+    - 'CLOUDSDK_COMPUTE_ZONE=europe-north1-c'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=k8s-epam'
+
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: [ 'scale', 'deployment', 'nginx-deployment', '--replicas=5' ]
+    env:
+    - 'CLOUDSDK_COMPUTE_ZONE=europe-north1-c'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=k8s-epam'
+
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: [ 'scale', 'deployment', 'tomcat-deployment', '--replicas=0' ]
+    env:
+    - 'CLOUDSDK_COMPUTE_ZONE=europe-north1-c'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=k8s-epam'
+
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: [ 'scale', 'deployment', 'tomcat-deployment', '--replicas=5' ]
+    env:
+    - 'CLOUDSDK_COMPUTE_ZONE=europe-north1-c'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=k8s-epam'
+
 
 images:
 - 'gcr.io/$PROJECT_ID/tomas'   
