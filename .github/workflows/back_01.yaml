@@ -1,0 +1,22 @@
+name: CIback
+
+on:
+ push:
+   branches: 
+     - cloudback
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: echo Hello, world!
+    
+    - name: GitHub Action for Maven
+      uses: LucaFeger/action-maven-cli@1.1.0
+      with:
+       args: clean install
