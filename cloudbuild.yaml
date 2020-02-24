@@ -24,4 +24,7 @@ steps:
 images:
 - 'gcr.io/$PROJECT_ID/tomas'   
 - 'gcr.io/$PROJECT_ID/nginx'
-
+secrets:
+- kmsKeyName: projects/epam-267215/locations/europe-north1/keyRings/google-keys/cryptoKeys/vault-token
+  secretEnv:
+    VAULT_T: CiQARyYZPDWUioF9jAX/K72QgHMP9a9fHSa107cfxWPNJov1EmISRAAZHrxOeeQD6a55630k3BUDsP+aBcBIMBOcu2NrLhK9zZkMIznGGfaYAk+KwFD4u2pYjftLlWjBtU5E0+s3WJTyM5TG
