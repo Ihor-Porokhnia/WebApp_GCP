@@ -9,7 +9,7 @@ steps:
     args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/nginx:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/nginx:latest',  '.' ]
     
   - name: 'ubuntu'
-    args: ['echo', '$$VAULT_T']
+    args: ['echo','$$VAULT_T']
     secretEnv: ['VAULT_T']
 
   - name: 'gcr.io/cloud-builders/kubectl'
