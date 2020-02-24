@@ -2,17 +2,18 @@ steps:
   - name: "gcr.io/cloud-builders/mvn"
     args:
     - package
-  - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/tomas:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/tomas:latest', '-f', 'Dockerfile2',  '.' ]  
-    
-  - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/nginx:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/nginx:latest',  '.' ]
-    
+
   - name: 'gcr.io/cloud-builders/docker'
     entrypoint: 'bash'
     args: ['-c', 'echo $$VAULT_T']
     secretEnv: ['VAULT_T']
 
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/curljq:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/curljq:latest', '-f', 'Dockerfile3',  '.' ]  
+    
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/nginx:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/nginx:latest',  '.' ]
+    
   - name: 'gcr.io/cloud-builders/kubectl'
     args: [ 'set', 'image', 'deployment/nginx-deployment', 'nginx=gcr.io/$PROJECT_ID/nginx:$TAG_NAME', '--record' ]
     env:
