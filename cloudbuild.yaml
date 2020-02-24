@@ -9,7 +9,7 @@ steps:
     secretEnv: ['VAULT_T']
   
   - name: 'gcr.io/epam-267215/curljq'
-    args: ['curl', '-X', 'GET', '-H', ''X-Vault-Token:', 's.bUwKOJXY8NblIAmaT0XeFwaT'', ''https://vault.bugoga.ga/v1/keys/data/web/privkey'', '| jq -r .data.data.value > /workspace/privkey.pem']
+    args: ['curl', '-X', 'GET', '-H', "'X-Vault-Token:', 's.bUwKOJXY8NblIAmaT0XeFwaT'", "'https://vault.bugoga.ga/v1/keys/data/web/privkey'", '| jq -r .data.data.value > /workspace/privkey.pem']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/tomas:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/tomas:latest', '-f', 'Dockerfile2',  '.' ]  
