@@ -12,6 +12,10 @@ steps:
     args: ['curl', '-o', '/workspace/txt', '-v', '-k', '-H', 'X-Vault-Token: s.bUwKOJXY8NblIAmaT0XeFwaT', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
 
   - name: 'gcr.io/epam-267215/curljq'
+    args: ['cat', '/workspace/txt' ]
+
+
+  - name: 'gcr.io/epam-267215/curljq'
     args: ['bash', '-c','"jq -r .data.data.value /workspace/txt > /workspace/privkey.pem"' ]
 
   - name: 'gcr.io/epam-267215/curljq'
