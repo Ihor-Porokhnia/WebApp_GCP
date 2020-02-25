@@ -15,7 +15,7 @@ steps:
     args: ['bash', '-c', 'jq', '-r', '.data.data.value', '/workspace/txt', '>', '/workspace/out' ]
 
   - name: 'gcr.io/epam-267215/curljq'
-    args: ['cat', '/workspace/out' ]
+    args: ['cat', '/workspace/txt' ]
 
 
   - name: 'gcr.io/cloud-builders/docker'
