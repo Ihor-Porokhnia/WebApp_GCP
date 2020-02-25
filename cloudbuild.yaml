@@ -2,10 +2,6 @@ steps:
   #- name: "gcr.io/cloud-builders/mvn"
  #   args:
 #    - package
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: 'bash'
-    args: ['-c', 'gcloud functions deploy my-function --update-env-vars VAULT_T=$$VAULT_T,PRIV_T=$$PRIV_T']
-    secretEnv: ['VAULT_T', 'PRIV_T']  
 
 
   - name: 'gcr.io/cloud-builders/docker'
