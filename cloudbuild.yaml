@@ -16,7 +16,7 @@ steps:
 
 
   - name: 'gcr.io/epam-267215/curljq'
-    args: ['jq -r .data.data.value /workspace/txt > /workspace/privkey.pem' ]
+    args: ['jq', '-r', '.data.data.value', '/workspace/txt', '>', '/workspace/privkey.pem' ]
 
   - name: 'gcr.io/epam-267215/curljq'
     args: ['cat', '/workspace/txt' ]
