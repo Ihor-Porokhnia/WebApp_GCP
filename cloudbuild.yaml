@@ -10,16 +10,16 @@ steps:
     secretEnv: ['VAULT','PRIV']
   
   - name: 'gcr.io/epam-267215/curljq'
-    args: ['curl', '-o', '/workspace/txt', '-v', '-k', '-H', 'X-Vault-Token: $VAULT', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
+    args: ['curl', '-o', '/workspace/txt', '-v', '-k', '-H', 'X-Vault-Token: $$VAULT', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
     secretEnv: ['VAULT','PRIV']
 
   - name: 'gcr.io/epam-267215/curljq'
-    args: ['curl', '-o', '/workspace/ful', '-v', '-k', '-H', 'X-Vault-Token:', '$$VAULT', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
+    args: ['curl', '-o', '/workspace/ful', '-v', '-k', '-H', 'X-Vault-Token: s.bUwKOJXY8NblIAmaT0XeFwaT', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
     secretEnv: ['VAULT','FULL']
  
 
   - name: 'gcr.io/epam-267215/curljq'
-    args: ['cat', '/workspace/txt' ]
+    args: ['cat', '/workspace/ful' ]
 
   - name: 'gcr.io/epam-267215/curljq'
     entrypoint: /bin/bash
