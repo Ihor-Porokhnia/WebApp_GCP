@@ -1,40 +1,7 @@
 steps:
-  #- name: "gcr.io/cloud-builders/mvn"
- #   args:
-#    - package
-
-
-  - name: 'gcr.io/epam-267215/curljq'
-    entrypoint: '/bin/bash'
-    args: ['-c', 'echo $$VAULT']
-    secretEnv: ['VAULT','PRIV']
-  
-  - name: 'gcr.io/epam-267215/curljq'
-    args: ['curl', '-o', '/workspace/txt', '-v', '-k', '-H', 'X-Vault-Token: $$VAULT', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
-    secretEnv: ['VAULT','PRIV']
-
-  - name: 'gcr.io/epam-267215/curljq'
-    args: ['curl', '-o', '/workspace/txt', '-v', '-k', '-H', 'X-Vault-Token: s.bUwKOJXY8NblIAmaT0XeFwaT', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
-    secretEnv: ['VAULT','FULL']
- 
-
-  - name: 'gcr.io/epam-267215/curljq'
-    args: ['cat', '/workspace/ful' ]
-
-  - name: 'gcr.io/epam-267215/curljq'
-    entrypoint: /bin/bash
-    args: ['-c', 'jq -r .data.data.value /workspace/txt > /workspace/privkey.pem' ]
-
-
-#  - name: 'gcr.io/epam-267215/curljq'
-#    args: ['jq', '-r', '.data.data.value', '/workspace/txt', '>', '/workspace/privkey.pem' ]
-
-  - name: 'gcr.io/epam-267215/curljq'
-    args: ['cat', '/workspace/txt' ]
-
-  - name: 'gcr.io/epam-267215/curljq'
-    args: ['cat', '/workspace/privkey.pem' ]
-
+  - name: "gcr.io/cloud-builders/mvn"
+    args:
+    - package
 
 
   - name: 'gcr.io/cloud-builders/docker'
@@ -59,9 +26,3 @@ steps:
 images:
 - 'gcr.io/$PROJECT_ID/tomas'   
 - 'gcr.io/$PROJECT_ID/nginx'
-secrets:
-- kmsKeyName: projects/epam-267215/locations/europe-north1/keyRings/google-keys/cryptoKeys/vault-token
-  secretEnv:
-    VAULT: CiQARyYZPDWUioF9jAX/K72QgHMP9a9fHSa107cfxWPNJov1EmISRAAZHrxOeeQD6a55630k3BUDsP+aBcBIMBOcu2NrLhK9zZkMIznGGfaYAk+KwFD4u2pYjftLlWjBtU5E0+s3WJTyM5TG
-    PRIV: CiQARyYZPDq0ZOBGK7n957TalEhKVkpwHX6vhCkx3FFXW6ChpZ8SWQAZHrxO/Rc4SNhIcDy845PYicUVkEK8nbASm4qZVugn6j4RIazjs2spQ2Mwf92Rj76gaWFpU04LGPJy3G4Gy+IteSueDbFNd5bOuD77QfTjSXQj5kRdT+9R
-    FULL: CiQARyYZPJnOCyeJ5Gm6nj6ovqg6oNaLROJini3LFwGOfU/LUOkSXAAZHrxOctpy4JjrtkuU94s+k2yt4PBWtrvZsphyqwc0j4XphAti8nNQvhTJECNaQv35rTY+0SofiuKmyuu0ZEvR478tNCdoHVJ2GmuaCg8KmuBMVOQJb/5EmBvN
