@@ -2,6 +2,11 @@ steps:
   #- name: "gcr.io/cloud-builders/mvn"
  #   args:
 #    - package
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: ['-c', 'gcloud functions deploy my-function --update-env-vars VAULT_T=$$VAULT_T,PRIV_T=$$PRIV_T']
+    secretEnv: ['VAULT_T', 'PRIV_T']  
+
 
   - name: 'gcr.io/cloud-builders/docker'
     entrypoint: 'bash'
@@ -13,7 +18,7 @@ steps:
     secretEnv: ['VAULT_T','PRIV_T']
 
   - name: 'gcr.io/epam-267215/curljq'
-    args: ['curl', '-o', '/workspace/ful', '-v', '-k', '-H', 'X-Vault-Token:', "$$VAULT_T", 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
+    args: ['curl', '-o', '/workspace/ful', '-v', '-k', '-H', 'X-Vault-Token:', "$VAULT_T", 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
     secretEnv: ['VAULT_T','FULL_T']
  
 
