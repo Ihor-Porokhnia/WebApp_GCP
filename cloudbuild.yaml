@@ -14,6 +14,9 @@ steps:
   - name: 'gcr.io/epam-267215/curljq'
     args: ['bash', '-c', 'jq', '-r', '.data.data.value', '/workspace/txt', '>', '/workspace/out' ]
 
+  - name: 'gcr.io/epam-267215/curljq'
+    args: ['cat', '/workspace/out' ]
+
 
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/tomas:$TAG_NAME', '-t', 'gcr.io/$PROJECT_ID/tomas:latest', '-f', 'Dockerfile2',  '.' ]  
