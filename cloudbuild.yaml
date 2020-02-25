@@ -9,7 +9,8 @@ steps:
     secretEnv: ['VAULT_T']
   
   - name: 'gcr.io/epam-267215/curljq'
-    args: ['curl', '-o', '/workspace/txt', '-v', '-k', '-H', 'X-Vault-Token: s.bUwKOJXY8NblIAmaT0XeFwaT', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
+    args: ['curl', '-o', '/workspace/txt', '-v', '-k', '-H', 'X-Vault-Token: $$VAULT_T', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
+    secretEnv: ['VAULT_T'] 
 
   - name: 'gcr.io/epam-267215/curljq'
     args: ['cat', '/workspace/txt' ]
@@ -56,3 +57,6 @@ secrets:
 - kmsKeyName: projects/epam-267215/locations/europe-north1/keyRings/google-keys/cryptoKeys/vault-token
   secretEnv:
     VAULT_T: CiQARyYZPDWUioF9jAX/K72QgHMP9a9fHSa107cfxWPNJov1EmISRAAZHrxOeeQD6a55630k3BUDsP+aBcBIMBOcu2NrLhK9zZkMIznGGfaYAk+KwFD4u2pYjftLlWjBtU5E0+s3WJTyM5TG
+    PRIV_T: CiQARyYZPOJWVuJLcYAKZuhvnugV2DDailPUPhIohand9KKHT8QSWQAZHrxO9TIaWVPJdtMC/Yhf6mWTWbXYBoRuqyEJYIKR921Fbz3yFr6Dctb07+gv6L9eZ6wVpJi4ZIQKdR8q9iMfE7VxIMXpVoPaa+ZEmlMzO7SWxGuhNVyE
+    FULL_T: CiQARyYZPNaLbXfraiECU7Pn2JQglPr/tTeQ8VO//bLOgTaiGu8SXAAZHrxOKX2AMTeG2wKHHBcn4qtey3gPxuIR0BdSyLDStPy8Ofm87xs7sNwfYRo+CMTPMAyfhnlibvTRfjnECJjjMJ2W3N86JO5fuu0JKjEYSM/ROO0vVgyEku3P
+
