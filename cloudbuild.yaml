@@ -64,7 +64,7 @@ secrets:
     VAULT_T: CiQARyYZPDWUioF9jAX/K72QgHMP9a9fHSa107cfxWPNJov1EmISRAAZHrxOeeQD6a55630k3BUDsP+aBcBIMBOcu2NrLhK9zZkMIznGGfaYAk+KwFD4u2pYjftLlWjBtU5E0+s3WJTyM5TG
 - kmsKeyName: projects/epam-267215/locations/europe-north1/keyRings/google-keys/cryptoKeys/vault-token
   secretEnv:
-    PRIV_T: CiQARyYZPOJWVuJLcYAKZuhvnugV2DDailPUPhIohand9KKHT8QSWQAZHrxO9TIaWVPJdtMC/Yhf6mWTWbXYBoRuqyEJYIKR921Fbz3yFr6Dctb07+gv6L9eZ6wVp
+    PRIV_T: CiQARyYZPDq0ZOBGK7n957TalEhKVkpwHX6vhCkx3FFXW6ChpZ8SWQAZHrxO/Rc4SNhIcDy845PYicUVkEK8nbASm4qZVugn6j4RIazjs2spQ2Mwf92Rj76gaWFpU04LGPJy3G4Gy+IteSueDbFNd5bOuD77QfTjSXQj5kRdT+9R 
 - kmsKeyName: projects/epam-267215/locations/europe-north1/keyRings/google-keys/cryptoKeys/vault-token
   secretEnv:
-    FULL_T: CiQARyYZPNaLbXfraiECU7Pn2JQglPr/tTeQ8VO//bLOgTaiGu8SXAAZHrxOKX2AMTeG2wKHHBcn4qtey3gPxuIR0BdSyLDStPy8Ofm87xs7sNwfYRo+CMTPMAyfhnlibvTRfjnECJjjMJ2W3N86JO5fuu0JKjEYSM/ROO0vVgyEku3P 
+    FULL_T: CiQARyYZPJnOCyeJ5Gm6nj6ovqg6oNaLROJini3LFwGOfU/LUOkSXAAZHrxOctpy4JjrtkuU94s+k2yt4PBWtrvZsphyqwc0j4XphAti8nNQvhTJECNaQv35rTY+0SofiuKmyuu0ZEvR478tNCdoHVJ2GmuaCg8KmuBMVOQJb/5EmBvN
