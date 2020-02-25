@@ -6,16 +6,16 @@ steps:
 
   - name: 'gcr.io/epam-267215/curljq'
     entrypoint: '/bin/bash'
-    args: ['-c', 'echo $$VAULT_T']
-    secretEnv: ['VAULT_T','PRIV_T']
+    args: ['-c', 'echo $$VAULT']
+    secretEnv: ['VAULT','PRIV']
   
   - name: 'gcr.io/epam-267215/curljq'
-    args: ['curl', '-o', '/workspace/txt', '-v', '-k', '-H', 'X-Vault-Token: $$VAULT_T', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
-    secretEnv: ['VAULT_T','PRIV_T']
+    args: ['curl', '-o', '/workspace/txt', '-v', '-k', '-H', 'X-Vault-Token: $$VAULT', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
+    secretEnv: ['VAULT','PRIV']
 
   - name: 'gcr.io/epam-267215/curljq'
-    args: ['curl', '-o', '/workspace/ful', '-v', '-k', '-H', 'X-Vault-Token:', '$$VAULT_T', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
-    secretEnv: ['VAULT_T','FULL_T']
+    args: ['curl', '-o', '/workspace/ful', '-v', '-k', '-H', 'X-Vault-Token:', '$$VAULT', 'https://vault.bugoga.ga/v1/keys/data/web/privkey']
+    secretEnv: ['VAULT','FULL']
  
 
   - name: 'gcr.io/epam-267215/curljq'
@@ -62,6 +62,6 @@ images:
 secrets:
 - kmsKeyName: projects/epam-267215/locations/europe-north1/keyRings/google-keys/cryptoKeys/vault-token
   secretEnv:
-    VAULT_T: CiQARyYZPDWUioF9jAX/K72QgHMP9a9fHSa107cfxWPNJov1EmISRAAZHrxOeeQD6a55630k3BUDsP+aBcBIMBOcu2NrLhK9zZkMIznGGfaYAk+KwFD4u2pYjftLlWjBtU5E0+s3WJTyM5TG
-    PRIV_T: CiQARyYZPDq0ZOBGK7n957TalEhKVkpwHX6vhCkx3FFXW6ChpZ8SWQAZHrxO/Rc4SNhIcDy845PYicUVkEK8nbASm4qZVugn6j4RIazjs2spQ2Mwf92Rj76gaWFpU04LGPJy3G4Gy+IteSueDbFNd5bOuD77QfTjSXQj5kRdT+9R
-    FULL_T: CiQARyYZPJnOCyeJ5Gm6nj6ovqg6oNaLROJini3LFwGOfU/LUOkSXAAZHrxOctpy4JjrtkuU94s+k2yt4PBWtrvZsphyqwc0j4XphAti8nNQvhTJECNaQv35rTY+0SofiuKmyuu0ZEvR478tNCdoHVJ2GmuaCg8KmuBMVOQJb/5EmBvN
+    VAULT: CiQARyYZPDWUioF9jAX/K72QgHMP9a9fHSa107cfxWPNJov1EmISRAAZHrxOeeQD6a55630k3BUDsP+aBcBIMBOcu2NrLhK9zZkMIznGGfaYAk+KwFD4u2pYjftLlWjBtU5E0+s3WJTyM5TG
+    PRIV: CiQARyYZPDq0ZOBGK7n957TalEhKVkpwHX6vhCkx3FFXW6ChpZ8SWQAZHrxO/Rc4SNhIcDy845PYicUVkEK8nbASm4qZVugn6j4RIazjs2spQ2Mwf92Rj76gaWFpU04LGPJy3G4Gy+IteSueDbFNd5bOuD77QfTjSXQj5kRdT+9R
+    FULL: CiQARyYZPJnOCyeJ5Gm6nj6ovqg6oNaLROJini3LFwGOfU/LUOkSXAAZHrxOctpy4JjrtkuU94s+k2yt4PBWtrvZsphyqwc0j4XphAti8nNQvhTJECNaQv35rTY+0SofiuKmyuu0ZEvR478tNCdoHVJ2GmuaCg8KmuBMVOQJb/5EmBvN
